@@ -25,13 +25,8 @@ module Translator
     alias :[] :read
 
     def load_files(paths)
-      require 'yaml'
       paths = (Array(paths) + Translator.default_file_paths).uniq
-      paths.each(&method(:load_file))
-    end
-
-    def load_file(path)
-      YAML.load_file(path).each { |lang, data| write(lang, data) }
+      YamlFileFlattener.new(paths).process.each { |language, data| write(language, data) }
     end
   end
 end

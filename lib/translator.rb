@@ -1,9 +1,10 @@
 require 'active_support/core_ext/module/attribute_accessors'
 
 module Translator
-  autoload :NullStream,   'translator/null_stream'
-  autoload :Synchronizer, 'translator/synchronizer'
-  autoload :Store,        'translator/store'
+  autoload :NullStream,        'translator/null_stream'
+  autoload :Synchronizer,      'translator/synchronizer'
+  autoload :Store,             'translator/store'
+  autoload :YamlFileFlattener, 'translator/yaml_file_flattener'
 
   mattr_accessor :storage
   @@storage = :Redis
