@@ -3,7 +3,7 @@ $:.push File.expand_path('../lib', __FILE__)
 require 'translator/version'
 
 Gem::Specification.new do |s|
-  s.name        = 'translator'
+  s.name        = 'translator_with_localeapp'
   s.version     = Translator::Version::VERSION
   s.platform    = Gem::Platform::RUBY
   s.licenses    = 'MIT'
