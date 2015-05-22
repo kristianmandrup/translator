@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.summary     = 'Flexible syncronization solution of locales with LocaleApp'
   s.email       = ['kd.engineer@yahoo.co.in']
   s.homepage    = 'https://github.com/kuldeepaggarwal/translator'
-  s.description = 'Flexible syncronization solution of locales with LocaleApp'
+  s.description = 'Flexible syncronization solution of locales with LocaleApp.'
   s.authors     = ['Kuldeep Aggarwal']
 
   s.rubyforge_project = 'devise'
@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 1.9.3'
 
-  s.add_dependency('localeapp', '~> 0.9.3')
-  s.add_dependency('moneta', '~> 0.8.0')
-  s.add_dependency('activesupport', '>= 3.2')
+  s.add_dependency('localeapp', '~> 0.9')
+  s.add_dependency('moneta', '~> 0.8')
+  s.add_dependency('activesupport', '>= 3.2', '< 5')
 end
