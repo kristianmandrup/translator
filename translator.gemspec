@@ -24,5 +24,5 @@ Gem::Specification.new do |s|
 
   s.add_dependency('localeapp', '~> 0.9.3')
   s.add_dependency('moneta', '~> 0.8.0')
-  s.add_dependency('activesupport', '~> 3.2')
+  s.add_dependency('activesupport', '>= 3.2')
 end
