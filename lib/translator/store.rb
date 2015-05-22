@@ -17,18 +17,12 @@ module Translator
     def write(key, value)
       @storage[key] = value
     end
+    alias :[]= :write
 
     def read(key)
       @storage[key]
     end
-
-    def [](key)
-      read(key)
-    end
-
-    def []=(key, value)
-      write(key, value)
-    end
+    alias :[] :read
 
     def load_files(paths)
       require 'yaml'
