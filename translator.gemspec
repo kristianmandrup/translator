@@ -22,7 +22,11 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 1.9.3'
 
-  s.add_dependency('localeapp', '~> 0.9')
-  s.add_dependency('moneta', '~> 0.8')
-  s.add_dependency('activesupport', '>= 3.2', '< 5')
+  s.add_dependency 'localeapp',     '~> 0.9'
+  s.add_dependency 'moneta',        '~> 0.8'
+  s.add_dependency 'activesupport', '>= 3.2', '< 5'
+
+  s.add_development_dependency 'bundler', '~> 1.6'
+  s.add_development_dependency 'rake',    '~> 10.0'
+  s.add_development_dependency 'rspec',   '~> 3.2.0', '>= 3.1.0'
 end

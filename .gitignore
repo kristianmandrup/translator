@@ -2,3 +2,5 @@
 locales/
 .localeapp/
 Gemfile.lock
+*.gem
+/coverage

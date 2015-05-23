@@ -1,3 +1,5 @@
+require 'localeapp'
+
 module Translator
   class Synchronizer
     attr_reader :paths, :output_stream
@@ -12,14 +14,25 @@ module Translator
     end
 
     private
+      def pusher
+        @pusher ||= ::Localeapp::CLI::Push.new(output: output_stream)
+      end
+
+      def puller
+        @puller ||= Localeapp::CLI::Pull.new(output: output_stream)
+      end
+
+      def updator
+        @updator ||= Localeapp::CLI::Update.new(output: output_stream)
+      end
+
       def push
-        pusher = ::Localeapp::CLI::Push.new(output: output_stream)
         paths.each { |path| pusher.execute(path)  }
       end
 
       def update
         pull unless pulled?
-        Localeapp::CLI::Update.new(output: output_stream).execute
+        updator.execute
       end
 
       def pull
@@ -27,7 +40,7 @@ module Translator
         FileUtils.mkdir_p(Translator.data_directory)
         FileUtils.mkdir_p(Pathname.new(Translator.synchronization_data_file).parent)
         File.open(Translator.synchronization_data_file, 'w') { }
-        Localeapp::CLI::Pull.new(output: output_stream).execute
+        puller.execute
       end
 
       def pulled?
@@ -37,6 +50,5 @@ module Translator
       def resolve_path(path)
         File.expand_path(path, __FILE__)
       end
-
   end
 end
