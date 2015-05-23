@@ -12,7 +12,9 @@ module Translator
       @options = options # can be removed
       @storage = Moneta.new(type, options)
     end
-    def_delegators :@storage, :key?, :clear
+    def_delegators :@storage, :key?, :clear, :adapter
+    def_delegators :adapter, :backend
+    def_delegators :backend, :keys
 
     def write(key, value)
       @storage[key] = value

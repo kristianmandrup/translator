@@ -57,4 +57,14 @@ describe Translator::Store do
       expect(store[:pa]).to eq(first_name: 'ਕੁਲਦੀਪ')
     end
   end
+
+  describe 'Delegations' do
+    it 'responds to key?, clear, adapter, backend, keys' do
+      expect(store).to respond_to(:key?)
+      expect(store).to respond_to(:clear)
+      expect(store).to respond_to(:adapter)
+      expect(store).to respond_to(:keys)
+      expect(store).to respond_to(:backend)
+    end
+  end
 end
