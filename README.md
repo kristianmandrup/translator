@@ -8,7 +8,7 @@ Installation
 
 Add this line to your application's Gemfile:
 
-```shell
+```ruby
 gem 'translator_with_localeapp', '~> 1.0.1'
 ```
 
